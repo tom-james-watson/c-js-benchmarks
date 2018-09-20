@@ -13,13 +13,13 @@ npm i
 ### Rebuilding JS
 
 ```
-webpack src/index.js --watch --mode development
+npm run watch
 ```
 
 ### Bundling JS for deployment
 
 ```
-webpack src/index.js
+npm run build
 ```
 
 ### Rebuilding C Wasm

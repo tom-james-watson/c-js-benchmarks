@@ -3,7 +3,10 @@
   "private": true,
   "version": "0.1.0",
   "description": "Comparing C Wasm and JS performance",
-  "main": "app.js",
+  "scripts": {
+    "build": "node_modules/.bin/webpack src/index.js",
+    "watch": "node_modules/.bin/webpack src/index.js --watch --mode development"
+  },
   "devDependencies": {
     "webpack": "^4.19.0",
     "webpack-cli": "^3.1.0"
