@@ -5,12 +5,12 @@ export default class Bubblesort {
   static get args() {
     return {
       size: {
-        default: 10000,
+        default: 1000,
         min: 1,
         max: 10000
       },
       iterations: {
-        default: 1,
+        default: 100,
         min: 1,
         max: 10000000
       }

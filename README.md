@@ -2,6 +2,8 @@
 
 Demo - https://c-js-benchmarks.netlify.com
 
+A collection of basic performance benchmarks that you can run on your own browser in order to compare C Wasm and JS performance.
+
 ## Development
 
 Install dependencies:

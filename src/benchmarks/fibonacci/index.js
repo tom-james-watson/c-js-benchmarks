@@ -28,20 +28,31 @@ export default class Fibonacci {
   }
 
   c() {
-    return Module.ccall(
-      'fibonacci',
-      'number',
-      ['number', 'number'],
-      [this.number, this.iterations]
-    )
+    let result
+
+    for (let i = 0; i < this.iterations; i++) {
+      result = Module.ccall(
+        'fibonacci',
+        'number',
+        ['number', 'number'],
+        [this.number, this.iterations]
+      )
+    }
+
+    return  result
   }
 
   js() {
-    return jsFibonacci(this.number, this.iterations)
+    let result
+
+    for (let i = 0; i < this.iterations; i++) {
+      result = jsFibonacci(this.number)
+    }
+
+    return result
   }
 
   compare(cResult, jsResult) {
-    console.log(cResult)
     return cResult === jsResult
   }
 

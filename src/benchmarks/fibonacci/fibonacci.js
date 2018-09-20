@@ -1,4 +1,4 @@
-function fib(n) {
+export default function(n) {
   let a = 1
   let b = 1
   let tmp = 0
@@ -11,14 +11,4 @@ function fib(n) {
   }
 
   return a
-}
-
-export default function(n, iterations) {
-  let result
-
-  for (let i = 0; i < iterations; i++) {
-    result = fib(n);
-  }
-
-  return result;
 }

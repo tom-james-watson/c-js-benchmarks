@@ -1,6 +1,7 @@
 #include <emscripten.h>
 
-long int fib(n)
+EMSCRIPTEN_KEEPALIVE
+long int fibonacci(n)
 {
   long int a = 1;
   long int b = 1;
@@ -15,16 +16,4 @@ long int fib(n)
   }
 
   return a;
-}
-
-EMSCRIPTEN_KEEPALIVE
-long int fibonacci(n, iterations) {
-  int result;
-
-  for (int i = 0; i < iterations; i++)
-  {
-    result = fib(n);
-  }
-
-  return result;
 }
