@@ -1,3 +1,7 @@
+# Comparing C Wasm and JS performance on the web
+
+Demo - https://c-js-benchmarks.netlify.com
+
 ## Development
 
 Install dependencies:
