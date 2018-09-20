@@ -1,10 +1,11 @@
-import {Quicksort, ArrayReverse} from './benchmarks'
+import {Quicksort, ArrayReverse, Fibonacci} from './benchmarks'
 
 let selectedBenchmark = 'quicksort'
 
 const benchmarks = {
   quicksort: Quicksort,
-  arrayreverse: ArrayReverse
+  arrayreverse: ArrayReverse,
+  fibonacci: Fibonacci
 }
 
 function run(fn) {
@@ -62,19 +63,23 @@ function setBenchmark(benchmark) {
 
   for (const argName of Object.keys(Benchmark.args)) {
     const arg = Benchmark.args[argName]
+    console.log({arg, argName})
     argsHtml += `
       <div>
         <label for="${argName}">${argName}</label>
-        <input id="${argName}" type="number" value="${arg.default}" min="${arg.min}" max=${arg.max}" />
+        <input id="${argName}" type="number" value="${arg.default}" min="${arg.min}" max="${arg.max}" />
       </div>
     `
   }
 
   document.getElementById("args").innerHTML = argsHtml
+
+  document.getElementById("c-link").href = Benchmark.links.c
+  document.getElementById("js-link").href = Benchmark.links.js
 }
 
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("run").addEventListener("click", runBenchmark)
   document.getElementById("benchmark").onchange = changeEventHandler
-  setBenchmark('quicksort')
+  setBenchmark(document.getElementById("benchmark").value)
 })

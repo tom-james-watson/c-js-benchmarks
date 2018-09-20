@@ -1,7 +1,5 @@
 export default class Quicksort {
 
-  static get MAX_VALUE() { return 255; }
-
   static get args() {
     return {
       size: {
@@ -22,7 +20,7 @@ export default class Quicksort {
     this.size = args.size
     this.values = Uint8Array.from(
       {length: this.size},
-      () => Math.floor(Math.random() * Quicksort.MAX_VALUE)
+      () => Math.floor(Math.random() * 255)
     )
   }
 

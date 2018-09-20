@@ -21,14 +21,14 @@
 
     <div class="container">
 
-      <h3 style="margin-top: 50px">Quicksort C WASM vs JS</h3>
+      <h3 style="margin-top: 50px">Comparing C WASM and JS Performance</h3>
 
       <div class="row">
         <label for="benchmark">Benchmark</label>
         <select id="benchmark">
           <option value="quicksort">Uint_8 Quicksort</option>
           <option value="arrayreverse">Uint_8 Array Reverse</option>
-          <option value="fibonacci">40th Fibonacci Number</option>
+          <option value="fibonacci">Nth Fibonacci Number</option>
         </select>
       </div>
 
@@ -36,7 +36,7 @@
 
         <div class="one-half column">
           <div id="args"></div>
-          <div style="margin-bottom: 50px">
+          <div>
             <button id="run" class="button-primary">Run</button>
           </div>
         </div>
@@ -48,10 +48,12 @@
             </thead>
             <tbody>
               <tr>
-                <td>C Wasm</td><td id="c-result"></td>
+                <td><a id="c-link" href="" target="_blank">C Wasm</a></td>
+                <td id="c-result"></td>
               </tr>
               <tr>
-                <td>Javascript</td><td id="js-result"></td>
+                <td><a id="js-link" href="" target="_blank">Javascript</a></td>
+                <td id="js-result"></td>
               </tr>
             </tbody>
           </table>

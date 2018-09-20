@@ -2,8 +2,6 @@ import jsArrayReverse from './array-reverse'
 
 export default class ArrayReverse {
 
-  static get MAX_VALUE() { return 255; }
-
   static get args() {
     return {
       size: {
@@ -19,12 +17,17 @@ export default class ArrayReverse {
     }
   }
 
+  static get links() { return {
+    c: 'https://github.com/tom-james-watson/c-js-benchmarks/blob/master/src/benchmarks/array-reverse/array-reverse.c',
+    js: 'https://github.com/tom-james-watson/c-js-benchmarks/blob/master/src/benchmarks/array-reverse/array-reverse.js'
+  }}
+
   constructor(args) {
     this.iterations = args.iterations
     this.size = args.size
     this.values = Uint8Array.from(
       {length: this.size},
-      () => Math.floor(Math.random() * ArrayReverse.MAX_VALUE)
+      () => Math.floor(Math.random() * 255)
     )
   }
 
@@ -40,7 +43,7 @@ export default class ArrayReverse {
       Module.ccall(
         'array_reverse',
         'number',
-        ['number', 'number'],
+        ['number', 'number', 'number'],
         [buffer, this.size, resultBuffer]
       )
 
