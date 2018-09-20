@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Quicksort C WASM vs JS</title>
+
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+    <script type='text/javascript' src="dist/c-funcs.js"></script>
+    <script src="dist/main.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <h3 style="margin-top: 50px">Quicksort C WASM vs JS</h3>
+
+      <div class="row">
+        <label for="benchmark">Benchmark</label>
+        <select id="benchmark">
+          <option value="quicksort">Uint_8 Quicksort</option>
+          <option value="arrayreverse">Uint_8 Array Reverse</option>
+          <option value="fibonacci">40th Fibonacci Number</option>
+        </select>
+      </div>
+
+      <div class="row">
+
+        <div class="one-half column">
+          <div id="args"></div>
+          <div style="margin-bottom: 50px">
+            <button id="run" class="button-primary">Run</button>
+          </div>
+        </div>
+
+        <div class="one-half column">
+          <table>
+            <thead>
+              <th>Language</th><th>Runtime</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>C Wasm</td><td id="c-result"></td>
+              </tr>
+              <tr>
+                <td>Javascript</td><td id="js-result"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

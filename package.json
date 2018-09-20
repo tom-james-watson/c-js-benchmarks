@@ -1,0 +1,13 @@
+{
+  "name": "c-js-benchmarks",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Comparing C Wasm and JS performance",
+  "main": "app.js",
+  "devDependencies": {
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0"
+  },
+  "author": "Tom Watson <tom@tomjwatson.com>",
+  "license": "MIT"
+}

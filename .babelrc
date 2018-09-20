@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    "transform-runtime"
+  ],
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "node": "7.7"
+        }
+      }
+    ],
+    "stage-1"
+  ]
+}
