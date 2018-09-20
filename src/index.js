@@ -1,10 +1,10 @@
-import {Quicksort, ArrayReverse, Fibonacci} from './benchmarks'
+import {Bubblesort, ArrayReverse, Fibonacci} from './benchmarks'
 
-let selectedBenchmark = 'quicksort'
+let selectedBenchmark
 
 const benchmarks = {
-  quicksort: Quicksort,
   arrayreverse: ArrayReverse,
+  bubblesort: Bubblesort,
   fibonacci: Fibonacci
 }
 
@@ -63,7 +63,6 @@ function setBenchmark(benchmark) {
 
   for (const argName of Object.keys(Benchmark.args)) {
     const arg = Benchmark.args[argName]
-    console.log({arg, argName})
     argsHtml += `
       <div>
         <label for="${argName}">${argName}</label>

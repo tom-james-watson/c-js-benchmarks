@@ -1,9 +1,9 @@
-import Quicksort from './quicksort'
+import Bubblesort from './bubblesort'
 import ArrayReverse from './array-reverse'
 import Fibonacci from './fibonacci'
 
 export {
-  Quicksort,
+  Bubblesort,
   ArrayReverse,
   Fibonacci
 }
