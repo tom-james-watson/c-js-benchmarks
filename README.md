@@ -75,3 +75,13 @@ Then to rebuild, simply:
 ```
 make
 ```
+
+### Serve index.html
+
+The easiest way is probably:
+
+```
+python3 -m http.server
+```
+
+You'll find the application at http://localhost:8000.
