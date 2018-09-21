@@ -38,18 +38,18 @@ export default class ArrayReverse {
     let result
 
     for (let i = 0; i < this.iterations; i++) {
-      const resultBuffer = Module._malloc(this.size)
+      const targetBuffer = Module._malloc(this.size)
 
       Module.ccall(
         'array_reverse',
         'number',
         ['number', 'number', 'number'],
-        [buffer, this.size, resultBuffer]
+        [buffer, this.size, targetBuffer]
       )
 
-      result = Module.HEAPU8.subarray(resultBuffer, resultBuffer + this.size)
+      result = Module.HEAPU8.subarray(targetBuffer, targetBuffer + this.size)
 
-      Module._free(resultBuffer)
+      Module._free(targetBuffer)
     }
 
     Module._free(buffer)
@@ -61,7 +61,9 @@ export default class ArrayReverse {
     let result
 
     for (let i = 0; i < this.iterations; i++) {
-      result = jsArrayReverse(this.values, this.size)
+      const target = Uint8Array.from({length: this.size})
+      jsArrayReverse(this.values, this.size, target)
+      result = target
     }
 
     return result
