@@ -41,8 +41,8 @@ async function runBenchmark() {
       alert('Test failed - results not equal')
     }
 
-    document.getElementById("c-result").innerHTML = `${cDuration}ms`
-    document.getElementById("js-result").innerHTML = `${jsDuration}ms`
+    document.getElementById("c-result").innerHTML = `${Math.round(cDuration)}ms`
+    document.getElementById("js-result").innerHTML = `${Math.round(jsDuration)}ms`
 
     document.getElementById("run").disabled = false
     document.getElementById("run").innerHTML = 'Run'
